@@ -1,10 +1,9 @@
 import requests
 import json
+from matrix import *
 
-API_KEY = "$API_KEY"
+API_KEY = "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"
 API_URL = "https://api.openai.com/v1/chat/completions"
-
-print("Enter 'q' or 'quit' to quit the chat\n")
 
 def get_chatbot_response(prompt):
     headers = {
@@ -22,12 +21,9 @@ def get_chatbot_response(prompt):
     response_json = json.loads(response.content)
 
     return response_json['choices'][0]['message']['content']
-
                 
 
-while True:
-    prompt = input("\nYou: ")
-    if prompt == 'q' or prompt == 'quit':
-        break
-    response = get_chatbot_response(prompt)
-    print("Chatbot:", response)
+prompt = f"give me an instruction by following text: {result}"
+
+response = get_chatbot_response(prompt)
+print("Chatbot:", response)
