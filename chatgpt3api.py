@@ -2,7 +2,7 @@ import requests
 import json
 from matrix import *
 
-API_KEY = "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"
+API_KEY = "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"
 API_URL = "https://api.openai.com/v1/chat/completions"
 
 def get_chatbot_response(prompt):
